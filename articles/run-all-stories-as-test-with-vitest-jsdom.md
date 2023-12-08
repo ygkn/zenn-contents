@@ -2,6 +2,7 @@
 title: Vitest(jsdom)でStorybookのStory全部テストする大作戦
 emoji: "🔖"
 type: "tech"
+publication_name: "yumemi_inc"
 topics: [Storybook, Vitest]
 published: true
 ---

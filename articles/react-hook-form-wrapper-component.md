@@ -2,6 +2,7 @@
 title: "React Hook Form でラップコンポーネントを使ってらくらくフォーム作成"
 emoji: "🎤"
 type: "tech"
+publication_name: "yumemi_inc"
 topics: [reacthookform, React, TypeScript]
 published: true
 ---

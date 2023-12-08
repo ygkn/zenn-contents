@@ -2,6 +2,7 @@
 title: "ReactNode型のpropを正しく扱う 〜もう謎の「0」や空要素を見せないために〜"
 emoji: "0️⃣"
 type: "tech"
+publication_name: "yumemi_inc"
 topics: [React, TypeScript]
 published: true
 ---
