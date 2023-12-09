@@ -175,6 +175,7 @@ https://www.scotthurff.com/posts/why-your-user-interface-is-awkward-youre-ignori
 
 https://storybook.js.org/addons/@storybook/addon-a11y
 
+![スクリーンショット（画面イメージ）：Storybookで`form`コンポーネントを表示している。Canvasにフォームのレンダリング結果と、その下部の「Accessibility」パネルにてアクセシビリティチェックの結果が表示されている。結果は「1 Violations 12 Passes 0 Incomplete」であり、「Elements must meet minimum color contrast ratio thresholds」というエラーが表示されている。](https://storage.googleapis.com/zenn-user-upload/ec8d4ec65373-20231209.png)
 :::message
 このアドオンの中で使用されているアクセシビリティのチェックツール「axe」はChrome拡張機能など他の方法でも利用できます。Storybookのアドオンを使用する方法はコンポーネント単位で確認することになります。そのため、問題のコンポーネントの特定や、開発プロセスの中で細かな確認ができますが、コンポーネントを組み合わせることで起こる問題には気づきにくくなります。用途やプロセスに合わせて組み合わせると良いでしょう。
 :::
