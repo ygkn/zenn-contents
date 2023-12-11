@@ -20,7 +20,7 @@ published: true
 - でもブラウザで実行していないから複雑なインタラクションテストやアクセシビリティテストなど、一部のテストが不安定になるかもね！　考えて使い分けよう
 
 
-https://github.com/ygkn/storybook-test-runner-jsdon/blob/main/src/test/component.test.tsx
+https://github.com/ygkn/storybook-test-runner-jsdom/blob/5b2bac8a099300584a9f0fedc42a5bcd38585901/src/test/component.test.tsx
 
 ## Storybook をテストとして動かす
 
@@ -109,7 +109,7 @@ https://www.shoeisha.co.jp/book/detail/9784798178639
 
 ここではVitestで全てのStorybookのStoryをテストとして実行する方法を提案します。冒頭にも出てきたの `component.test.ts` がそれです。
 
-https://github.com/ygkn/storybook-test-runner-jsdom/blob/main/src/test/component.test.tsx
+https://github.com/ygkn/storybook-test-runner-jsdom/blob/5b2bac8a099300584a9f0fedc42a5bcd38585901/src/test/component.test.tsx
 
 
 実際に`components.test.ts`を導入している例はリポジトリ[ygkn/storybook-test-runner-jsdom](https://github.com/ygkn/storybook-test-runner-jsdom)にあります。このリポジトリでVitestを実行すると、全てのStoryが実行されていることを確認できます。
@@ -210,6 +210,33 @@ https://twitter.com/storybookjs/status/1724815595290378573
     }
 ```
 
+
+:::message
+2023/12/12 追記
+
+`vitest.testLevel` パラメータでテストレベルを設定する例を追加しました。
+
+テストレベルは以下のものがあります。
+
+
+1. **`none`**: そのStoryではテストを実行しない
+2. **`smoke-only`**: Storyのレンダリング時にエラーが発生しないことのみをテストする
+3. **`interaction`** Storyのレンダリング後、`play()` 関数も実行する
+
+テストレベルは、Parameterで以下のように設定できるため`preview.tsx`（`preview.{t,j}s{,x}`）、meta、Storyで設定可能です。
+
+```ts
+// preview or meta or Story
+{
+    parameters: {
+    vitest: {
+      testLevel: "none",
+    },
+  },
+}
+```
+:::
+
 ### アクセシビリティチェックの信頼性が落ちる
 
 Storybook test runnerではaxe-playwrightを使用して、この手法ではvitest-axeを使用してアクセシビリティチェックを実行できます。
@@ -225,3 +252,12 @@ https://github.com/chaance/vitest-axe
 この記事では`components.test.ts`を用いてStorybookをVitest上でテストする方法について述べました。
 
 Testing Trophyの話などでもよく言われるように、多くのテストの手法にはトレードオフが存在します。メリットとデメリットを把握してより良い開発者体験を目指していきましょう。
+
+
+:::message
+2023/12/12 追記
+
+`@storybook/test` の `fn()` を使用していない場合は `play` 関数の実行時にActionを`fn()` に変換した `args` を渡す必要がありましたが、渡していませんでした。サンプルリポジトリの例を修正しました。
+:::
+
+
