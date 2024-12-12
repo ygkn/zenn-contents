@@ -1,12 +1,13 @@
 ---
 title: "Next.jsの型を厳密に定義しなおしてロジックのミスを発見する"
-emoji: "🦺"
+emoji: "🧷"
 type: "tech"
 topics:
   - "nextjs"
   - "typescript"
   - "eslint"
 published: true
+publication_name: "yumemi_inc"
 ---
 
 これは、[株式会社ゆめみ Advent Calendar 2024](https://qiita.com/advent-calendar/2024/yumemi) 13日目の記事です。
@@ -45,10 +46,9 @@ export default handler;
 [このコードの TypeScript Playgrond](https://www.typescriptlang.org/play/?#code/LAKAlgtgDg9gTgFwAQG8kIJ5QKZIHLYAeCAglGABICGAdgCYA22cSAvkgGZwwRIBENIgj4BuUJFiIkAKiRUAzkgBunbrz5KqDMACMYwsSFCgAxjBrzkAJWwBHAK7ZLAIRh0MAZRMALbBCpIALzKAHQwOgBW2CYIABQooEhI8jzYAGpajgBcoZZwYDQA5rEAlAA0oKwlhqbmlkjetIzMOQTEZJRNTCzBChg0JkixcHZlSCPyJUEAfKiJSAD0C0iACwyAVwyA4wyAPwyA7QyA5wyAzwyAskqA1gyAQ8qA5o7zZhYwTCEMMMUjtiF67iEpEOmZ2NXGICSSyQYA4gHDTQB2DIBDc0Ab3KAGQZAGAJJ0AVgyAYwZAGYMgBEGQDRDPNQUMlCEwPJYjYHE4EK53F5fP4xi83m4MCUpglAUlxk5PggqAh7CSACwABiFJU+2Ho8SQ33k8iohWwOT4OiodE55MsfDY-3ZSRGfLgNBEi2WgGUGU0QwCXpoB8c05BpoSEAQQyADf1ADEM2MA0gyOwBkBN75qwAUDlki0YB9BlBkMA2gyYwDmDIBABnW232x3OF0A6gzotOAPwYMTj5sCjlbbfr7IakHC3Zmc1jQ4AWDUAECqOhObXaHU6XDPZwBiDKbABYMJz97JuKXuj2edkZHy+PwYjh1rBqICIkmQdGwHCo9gYyEa9G6IiAA)
 
 
-そのままでは、 Next.jsの型付けにより `req.body` (`NextApiRequest["body"]`) の型は `any` になるため、`req.body.someValue` などのようにパースなしで参照しても型エラーは出ません。
+そのままでは、 Next.jsの型付けにより `req.body` (`NextApiRequest["body"]`) の型は `any` になるため、`req.body.someValue` などのように検証なしで参照しても型エラーは出ません。
 
-
-そこで、`req.body` の型を `unknown` として上書きすることで、先述のようなパースなしでの `req.body` の参照が型エラーとする方法を考えます。
+そこで、`req.body` の型を `unknown` として上書きすることで、先述のような検証なしでの `req.body` の参照が型エラーとする方法を考えます。
 
 ## より厳密な型を定義する
 
