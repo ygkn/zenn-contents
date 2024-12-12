@@ -1,13 +1,13 @@
 {
   "devDependencies": {
     "@proofdict/textlint-rule-proofdict": "^3.1.2",
-    "@ygkn/textlint-rule-preset-ygkn": "^0.0.0",
+    "@ygkn/textlint-rule-preset-ygkn": "^0.0.1",
     "prh": "^5.4.4",
-    "textlint": "^13.3.3",
+    "textlint": "^14.4.0",
     "textlint-filter-rule-comments": "^1.2.2",
-    "textlint-rule-preset-ja-spacing": "^2.3.0",
-    "textlint-rule-preset-ja-technical-writing": "^8.0.0",
-    "textlint-rule-preset-jtf-style": "^2.3.13",
-    "zenn-cli": "^0.1.107"
+    "textlint-rule-preset-ja-spacing": "^2.4.3",
+    "textlint-rule-preset-ja-technical-writing": "^10.0.1",
+    "textlint-rule-preset-jtf-style": "^3.0.1",
+    "zenn-cli": "^0.1.158"
   }
 }
