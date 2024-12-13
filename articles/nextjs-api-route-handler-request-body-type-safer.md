@@ -12,7 +12,7 @@ publication_name: "yumemi_inc"
 
 これは、[株式会社ゆめみ Advent Calendar 2024](https://qiita.com/advent-calendar/2024/yumemi) 13日目の記事です。
 
-Next.js (Pages Router) のAPI route handlerにおいて、ValibotやZodで値の検証をせずにリクエストボディの値を使用することを、型検査レベルで防ぐことを考えます。
+Next.js (Pages Router) のAPI Routesのhandlerにおいて、ValibotやZodで値の検証をせずにリクエストボディの値を使用してしまう不具合を、型検査レベルで防ぐことを考えます。
 
 例えば、次のようなコードで、処理の順番やロジックの誤りを型エラーを出して気づきたいといったものです。
 
